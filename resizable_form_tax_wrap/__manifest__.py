@@ -1,106 +1,77 @@
 {
-    'name': 'Resizable Form & Tax Wrapping in List Labels',
-    'version': '18.0.2.1.0',
+    'name': 'Resizable Form & Lists',
+    'version': '19.0.1.0.0',
     'category': 'Extra Tools',
-    'summary': 'Free. Drag to resize chatter, form height, list rows and embedded lists. Long column headers wrap instead of truncating.',
+    'summary': 'Drag to resize chatter, form height, list rows and embedded lists. Long column headers wrap instead of truncating.',
+
     'author': 'Core Codings',
     'maintainer': 'Core Codings',
     'company': 'Core Codings',
-    'website': '',
     'support': 'corecoddings@gmail.com',
 
-    # Free module. LGPL-3 is the correct license for a free Odoo Apps
-    # listing: Odoo's proprietary license states the software may only
-    # be used if a license was purchased, which contradicts a free
-    # listing. Deliberately no 'price' or 'currency' keys - their
-    # absence is what makes the listing free.
     'license': 'LGPL-3',
 
     'description': """
-Resizable Form & Tax Wrapping in List Labels
-=============================================
+Resizable Form & Lists
+======================
 
-Free for Odoo 18.0 - Community and Enterprise.
+Free for Odoo 19.0 - Community and Enterprise.
 
 Four small things Odoo doesn't let you adjust, each given a drag handle
 that remembers what you chose.
 
 1. Resizable chatter
 ---------------------
-When Odoo places the chatter beside the form (its own decision, based on
-window size and zoom - left untouched by this module), a drag handle on
-its left edge lets you widen or narrow it. The form sheet expands to use
-the space you free up. Your preferred width is remembered the next time
-you open a form. If the window is too narrow and Odoo drops the chatter
-below the form instead, the chatter reverts to full-width standard Odoo
-behaviour with no styling from this module applied at all.
+When Odoo places the chatter beside the form, a drag handle on its left
+edge lets you widen or narrow it. The form sheet expands to use the
+space you free up. Your preferred width is remembered the next time
+you open a form.
 
 2. Expand the form vertically
 ------------------------------
-Odoo's app shell normally clips form content to exactly the browser
-window's height, with a small internal scrollbar for anything past the
-fold. A drag handle at the bottom of the form lets you expand it so
-embedded lists (e.g. order lines) show all their rows directly - the
-browser's own scrollbar takes over instead, the same trade-off Odoo
-itself already makes on mobile-width screens. Leaving the form restores
-the shell to stock behaviour so other views are unaffected.
+A drag handle at the bottom of the form lets you expand the form so
+embedded lists can display more rows directly.
 
 3. Resizable list rows and wrapping headers
 --------------------------------------------
-Long column headers ("Taxes", "Amount Untaxed", "Discount Amt.") no
-longer get cut off with an ellipsis - they wrap onto multiple lines
-instead. A small drag grip in the corner of the header row lets you
-compact rows tighter than Odoo's default or make them roomier, which is
-remembered for next time.
+Long column headers such as "Taxes", "Amount Untaxed" and "Discount Amt."
+wrap onto multiple lines instead of being truncated with an ellipsis.
+
+A drag grip in the corner of the header row lets you adjust the row
+height, and the preference is remembered for next time.
 
 4. Resizable embedded list height
 ----------------------------------
-A drag strip along the bottom edge of one2many/many2many lists (Order
-Lines, Invoice Lines, etc.) sets how tall the list box is, remembered
-per model and per field so each list keeps its own size.
+A drag strip along the bottom edge of one2many/many2many lists lets you
+adjust the height of embedded lists such as Order Lines and Invoice Lines.
 
 Behaviour
 ---------
-* All preferences are stored locally in each person's browser, so
-  colleagues sharing a database each keep their own sizes.
-* Stock padding and widths are measured at runtime, so a fresh install
-  looks pixel-identical to standard Odoo until someone drags a handle.
-* Odoo's own side-vs-bottom chatter decision is respected, never
-  overridden.
+* Preferences are stored locally in each user's browser.
+* Each user can have their own preferred sizes.
+* No database records are created for these preferences.
+* The module does not override Odoo's own chatter positioning behaviour.
+* The interface initially behaves like standard Odoo until resized.
 
 Compatibility
 -------------
-Odoo 18.0, both Community and Enterprise editions. Depends only on the
-standard `web` and `mail` modules - no Enterprise-only dependency, and
-nothing that assumes an Enterprise theme.
+Odoo 19.0, Community and Enterprise editions.
+
+Depends only on the standard `web` and `mail` modules.
 
 No changes are made to any data model. This is a pure front-end
-(JS/SCSS) addon, so it is safe to install and uninstall at any time,
-and it leaves no records behind when removed.
+JavaScript/SCSS addon.
 
 Licensed under LGPL-3 and free to use, modify and redistribute.
 
 Changelog
 ---------
-18.0.2.1.0
-  - Ported to Odoo 18.0. No API changes were required - the patch(),
-    ref and renderer APIs used here are identical in 18.0 and 18.0.
-    The chatter container selector was widened to cover the class names
-    used across 18.x/19.x builds.
-  - Fixed: narrowing the chatter left a blank gap instead of letting the
-    form sheet expand into the reclaimed space, because Odoo caps the
-    sheet with its own max-width. The cap is now lifted while (and only
-    while) the chatter is at a manually chosen width.
-  - Fixed: when the window or zoom narrowed enough for Odoo to move the
-    chatter below the form, inline styles written during side mode
-    stayed on the element and pinned the bottom chatter to a fixed width
-    instead of spanning the full sheet. All inline styling is now
-    reverted the moment side mode ends.
-  - Fixed: the form-height expansion left `overflow: visible` on
-    `.o_content` after navigating away from the form, breaking scrolling
-    in the next view. The shell is now restored on unmount.
-  - Fixed: drag handles could be duplicated when a renderer re-mounted
-    onto a reused DOM node.
+19.0.1.0.0
+  - Ported to Odoo 19.0.
+  - Added resizable chatter.
+  - Added form height resizing.
+  - Added resizable list rows and wrapping headers.
+  - Added resizable embedded list height.
 """,
 
     'depends': ['mail', 'web'],
@@ -118,9 +89,9 @@ Changelog
         ],
     },
 
-    # First entry is the listing thumbnail shown in App Store search
-    # results - it must be the banner, not the icon.
-    'images': ['static/description/banner.gif'],
+    'images': [
+        'static/description/banner.gif',
+    ],
 
     'installable': True,
     'application': False,

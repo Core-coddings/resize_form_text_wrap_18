@@ -1,6 +1,6 @@
 # Resizable Form & Tax Wrapping in List Labels
 
-An Odoo 18 module that improves the user interface by allowing users to resize form components and display wrapped list column headers instead of truncated text.
+An Odoo 19 module that improves the user interface by allowing users to resize form components and display wrapped list column headers instead of truncated text.
 
 ## Features
 
@@ -28,7 +28,8 @@ After installation:
 
 ## Compatibility
 
-- Odoo 18 Community
+- Odoo 19 Community
+- Odoo 19 Enterprise
 
 ## Module Structure
 
