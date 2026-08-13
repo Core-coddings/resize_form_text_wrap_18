@@ -3,7 +3,6 @@
     'version': '18.0.2.1.0',
     'category': 'Extra Tools',
     'summary': 'Free. Drag to resize chatter, form height, list rows and embedded lists. Long column headers wrap instead of truncating.',
-
     'author': 'Core Codings',
     'maintainer': 'Core Codings',
     'company': 'Core Codings',
@@ -121,7 +120,7 @@ Changelog
 
     # First entry is the listing thumbnail shown in App Store search
     # results - it must be the banner, not the icon.
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.gif'],
 
     'installable': True,
     'application': False,
