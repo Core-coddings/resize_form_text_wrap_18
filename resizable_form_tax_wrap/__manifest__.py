@@ -1,5 +1,5 @@
 {
-    'name': 'Resizable Form & Tax Wrapping in List Labels',
+    'name': 'Resizable Form & Lists',
     'version': '18.0.2.1.0',
     'category': 'Extra Tools',
     'summary': 'Free. Drag to resize chatter, form height, list rows and embedded lists. Long column headers wrap instead of truncating.',
