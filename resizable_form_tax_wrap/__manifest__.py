@@ -90,7 +90,7 @@ Changelog
     },
 
     'images': [
-        'static/description/banner.gif',
+        'static/description/odoo_apps_banner_hd.gif',
     ],
 
     'installable': True,
