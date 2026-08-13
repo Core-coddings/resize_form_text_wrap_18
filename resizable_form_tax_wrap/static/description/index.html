@@ -1,0 +1,141 @@
+<section style="padding:0;margin:0;font-family:'Poppins','Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#242028;">
+
+  <!-- ============ HERO ============ -->
+  <div style="background:linear-gradient(135deg,#f7f5f9 0%,#efeaf1 100%);padding:56px 40px;text-align:center;border-bottom:1px solid #ded8e2;">
+    <h1 style="margin:0 0 14px;font-size:40px;font-weight:700;color:#242028;letter-spacing:-0.5px;">
+      Resizable Form &amp; Tax Wrapping in List Labels
+    </h1>
+    <p style="margin:0 auto;max-width:760px;font-size:19px;line-height:1.6;color:#78707d;">
+      Drag to resize the chatter, the form height, list row height and embedded lists.
+      Long column headers wrap onto two lines instead of being cut off with an ellipsis.
+    </p>
+    <div style="margin-top:26px;">
+      <span style="display:inline-block;margin:5px;padding:9px 20px;background:#714B67;border:2px solid #714B67;border-radius:22px;font-size:15px;font-weight:700;color:#ffffff;">Free &amp; open source (LGPL-3)</span>
+      <span style="display:inline-block;margin:5px;padding:9px 20px;background:#fff;border:2px solid #ded8e2;border-radius:22px;font-size:15px;font-weight:600;color:#714B67;">Odoo 18 &mdash; Community &amp; Enterprise</span>
+    </div>
+    <div>
+      <span style="display:inline-block;margin:5px;padding:9px 20px;background:#fff;border:2px solid #ded8e2;border-radius:22px;font-size:15px;font-weight:600;color:#714B67;">No data model changes</span>
+      <span style="display:inline-block;margin:5px;padding:9px 20px;background:#fff;border:2px solid #ded8e2;border-radius:22px;font-size:15px;font-weight:600;color:#714B67;">Pure JS / SCSS</span>
+      <span style="display:inline-block;margin:5px;padding:9px 20px;background:#fff;border:2px solid #ded8e2;border-radius:22px;font-size:15px;font-weight:600;color:#714B67;">Safe to uninstall anytime</span>
+    </div>
+  </div>
+
+  <!-- ============ THE PROBLEM ============ -->
+  <div style="padding:48px 40px;background:#ffffff;">
+    <h2 style="margin:0 0 18px;font-size:28px;font-weight:700;text-align:center;">
+      Four small things Odoo doesn't let you adjust
+    </h2>
+    <p style="margin:0 auto 36px;max-width:760px;font-size:17px;line-height:1.7;color:#78707d;text-align:center;">
+      Odoo fixes the chatter width, clips the form to exactly the window height,
+      locks row height, and truncates any column header too long for its column.
+      None of those are configurable. This module adds a drag handle to each one
+      and remembers what you chose.
+    </p>
+
+    <table style="width:100%;max-width:900px;margin:0 auto;border-collapse:separate;border-spacing:16px;">
+      <tr>
+        <td style="width:50%;vertical-align:top;background:#faf8fb;border:1px solid #ded8e2;border-radius:12px;padding:24px;">
+          <div style="font-size:13px;font-weight:700;color:#714B67;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">01 &mdash; Chatter</div>
+          <h3 style="margin:0 0 10px;font-size:20px;font-weight:600;">Resize the chatter panel</h3>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:#78707d;">
+            A drag handle on the chatter's left edge widens or narrows it, and the form
+            sheet expands to use the space you free up. Your width is remembered next
+            time you open a form.
+          </p>
+        </td>
+        <td style="width:50%;vertical-align:top;background:#faf8fb;border:1px solid #ded8e2;border-radius:12px;padding:24px;">
+          <div style="font-size:13px;font-weight:700;color:#714B67;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">02 &mdash; Form height</div>
+          <h3 style="margin:0 0 10px;font-size:20px;font-weight:600;">Expand the form vertically</h3>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:#78707d;">
+            Odoo clips form content to the window height with a small internal
+            scrollbar. Drag the bottom handle to let the page grow instead, so long
+            order lines are visible without a nested scroll.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="width:50%;vertical-align:top;background:#faf8fb;border:1px solid #ded8e2;border-radius:12px;padding:24px;">
+          <div style="font-size:13px;font-weight:700;color:#714B67;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">03 &mdash; List rows</div>
+          <h3 style="margin:0 0 10px;font-size:20px;font-weight:600;">Row height &amp; wrapping headers</h3>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:#78707d;">
+            Headers like <em>Taxes</em>, <em>Amount Untaxed</em> or <em>Discount Amt.</em>
+            wrap onto a second line instead of being cut off. A grip in the header
+            corner makes rows tighter or roomier.
+          </p>
+        </td>
+        <td style="width:50%;vertical-align:top;background:#faf8fb;border:1px solid #ded8e2;border-radius:12px;padding:24px;">
+          <div style="font-size:13px;font-weight:700;color:#714B67;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">04 &mdash; Embedded lists</div>
+          <h3 style="margin:0 0 10px;font-size:20px;font-weight:600;">Resize order line boxes</h3>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:#78707d;">
+            A strip along the bottom edge of any one2many/many2many list sets how tall
+            it is &mdash; remembered separately for each model and field, so Order Lines
+            and Invoice Lines keep their own sizes.
+          </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ============ SCREENSHOT SLOT ============ -->
+  <div style="padding:48px 40px;background:#f7f5f9;border-top:1px solid #ded8e2;border-bottom:1px solid #ded8e2;text-align:center;">
+    <h2 style="margin:0 0 28px;font-size:28px;font-weight:700;">See it in action</h2>
+    <img src="Resize-form&Text Wrapping.gif"
+         alt="Dragging the chatter panel wider and narrower on a sales order"
+         style="max-width:100%;border:1px solid #ded8e2;border-radius:10px;box-shadow:0 4px 18px rgba(36,32,40,0.10);"/>
+    <p style="margin:14px 0 34px;font-size:14px;color:#9a939f;">Resizing the chatter &mdash; the form sheet expands to fill the space.</p>
+
+    <img src="text_wrap.png"
+         alt="List column headers wrapping onto two lines instead of being truncated"
+         style="max-width:100%;border:1px solid #ded8e2;border-radius:10px;box-shadow:0 4px 18px rgba(36,32,40,0.10);"/>
+    <p style="margin:14px 0 0;font-size:14px;color:#9a939f;">Column headers wrap instead of truncating, and row height is adjustable.</p>
+  </div>
+
+  <!-- ============ HOW IT BEHAVES ============ -->
+  <div style="padding:48px 40px;background:#ffffff;">
+    <h2 style="margin:0 0 26px;font-size:28px;font-weight:700;text-align:center;">How it behaves</h2>
+    <table style="width:100%;max-width:820px;margin:0 auto;border-collapse:collapse;font-size:16px;">
+      <tr style="border-bottom:1px solid #ded8e2;">
+        <td style="padding:15px 12px;font-weight:600;width:38%;">Per user</td>
+        <td style="padding:15px 12px;color:#78707d;">Sizes are stored in each person's own browser, so colleagues sharing a database each keep their own preferences.</td>
+      </tr>
+      <tr style="border-bottom:1px solid #ded8e2;">
+        <td style="padding:15px 12px;font-weight:600;">Nothing changes until you drag</td>
+        <td style="padding:15px 12px;color:#78707d;">Stock padding and widths are measured at runtime, so a fresh install looks pixel-identical to standard Odoo until someone moves a handle.</td>
+      </tr>
+      <tr style="border-bottom:1px solid #ded8e2;">
+        <td style="padding:15px 12px;font-weight:600;">Odoo's layout is respected</td>
+        <td style="padding:15px 12px;color:#78707d;">Whether the chatter sits beside or below the form stays Odoo's decision. When the window is narrow and Odoo moves the chatter down, the module steps aside entirely.</td>
+      </tr>
+      <tr style="border-bottom:1px solid #ded8e2;">
+        <td style="padding:15px 12px;font-weight:600;">No database footprint</td>
+        <td style="padding:15px 12px;color:#78707d;">No models, no fields, no views inherited. Front-end assets only &mdash; install and uninstall freely.</td>
+      </tr>
+      <tr style="border-bottom:1px solid #ded8e2;">
+        <td style="padding:15px 12px;font-weight:600;">Dependencies</td>
+        <td style="padding:15px 12px;color:#78707d;">Only the standard <code style="background:#f2eff4;padding:2px 7px;border-radius:4px;">web</code> and <code style="background:#f2eff4;padding:2px 7px;border-radius:4px;">mail</code> modules &mdash; no Enterprise-only dependency.</td>
+      </tr>
+      <tr style="border-bottom:1px solid #ded8e2;">
+        <td style="padding:15px 12px;font-weight:600;">Tested on</td>
+        <td style="padding:15px 12px;color:#78707d;">Odoo 18.0, Community and Enterprise. This listing is the 18.0 build.</td>
+      </tr>
+      <tr>
+        <td style="padding:15px 12px;font-weight:600;">License</td>
+        <td style="padding:15px 12px;color:#78707d;">LGPL-3 &mdash; free to use, modify and redistribute, in commercial deployments included.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ============ SUPPORT ============ -->
+  <div style="padding:44px 40px;background:linear-gradient(135deg,#714B67 0%,#4a2f44 100%);text-align:center;color:#ffffff;">
+    <h2 style="margin:0 0 12px;font-size:26px;font-weight:700;color:#ffffff;">Free, and still maintained</h2>
+    <p style="margin:0 auto 22px;max-width:640px;font-size:16px;line-height:1.65;color:#e6dcE4;">
+      This module is free and LGPL-3 licensed, so formal support isn't included &mdash;
+      but bug reports are genuinely welcome and do get fixed. Get in touch and
+      describe what you're seeing.
+    </p>
+    <p style="margin:0;font-size:15px;color:#cbbcc7;">
+      Core Codings &mdash; <a href="mailto:corecoddings@gmail.com" style="color:#ffffff;text-decoration:underline;">corecoddings@gmail.com</a>
+    </p>
+  </div>
+
+</section>

@@ -1,0 +1,48 @@
+.o_field_x2many,
+.o_field_one2many,
+.o_field_many2many {
+    position: relative;
+}
+
+// The scrollable wrapper around the <table>. Width is left alone -
+// it stays 100% of its container automatically, so it always tracks
+// the sheet's current width (e.g. if the sheet gets wider from
+// resizing the chatter elsewhere) with no dragging needed. Only
+// height is set directly from JS (see x2many_box_resizer.js).
+.o_x2many_resizable_box {
+    display: block;
+    overflow: auto;
+}
+
+// ---- Full-length drag strip along the bottom edge (height only) ----
+.o_x2many_resize_edge_bottom {
+    position: absolute;
+    z-index: 15;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 12px;
+    cursor: ns-resize;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 5px;
+        height: 3px;
+        border-radius: 2px;
+        background-color: rgba(113, 75, 103, 0.2);
+        transition: background-color .15s ease;
+    }
+
+    &:hover::after,
+    body.o_x2many_resizing &::after {
+        background-color: var(--o-resizer-handle-color, #714B67);
+    }
+}
+
+body.o_x2many_resizing {
+    cursor: ns-resize !important;
+    user-select: none !important;
+}

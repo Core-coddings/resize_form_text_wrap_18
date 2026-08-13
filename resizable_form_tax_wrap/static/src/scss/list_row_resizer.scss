@@ -1,0 +1,58 @@
+// ---- 1. Let header labels wrap instead of truncating with "..." ----
+// (Only affects the label text itself - doesn't touch row/cell padding,
+// so short labels like "Product" or "Quantity" render exactly as
+// stock Odoo does; only labels too long for their column will wrap.)
+.o_list_renderer thead th .text-truncate {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    word-break: break-word;
+}
+
+// ---- 2. Drag handle to resize row height (thinner or taller) ----
+// --o-list-row-padding is set from JS to Odoo's own stock padding
+// value the moment the table mounts, so nothing changes visually
+// until the person actually drags the handle.
+.o_list_renderer .o_data_row > td {
+    padding-top: var(--o-list-row-padding, 0.3rem);
+    padding-bottom: var(--o-list-row-padding, 0.3rem);
+}
+
+// Small resize grip anchored inside the last header cell (a valid
+// place for a <div>, unlike <thead>/<tr> directly) so it can never
+// corrupt the table's own layout or height.
+.o_list_row_resize_anchor {
+    position: relative;
+}
+
+.o_list_row_resize_handle {
+    position: absolute;
+    right: 2px;
+    bottom: -3px;
+    width: 16px;
+    height: 10px;
+    cursor: ns-resize;
+    z-index: 10;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 4px;
+        height: 2px;
+        border-radius: 1px;
+        background: transparent;
+        transition: background-color .15s ease;
+    }
+
+    &:hover::after,
+    body.o_list_row_resizing &::after {
+        background-color: var(--o-resizer-handle-color, #714B67);
+    }
+}
+
+body.o_list_row_resizing {
+    cursor: ns-resize !important;
+    user-select: none !important;
+}

@@ -1,0 +1,84 @@
+// Only ever applies in aside mode. In bottom mode Odoo's own layout is
+// left completely untouched - and the JS side strips its inline styles
+// off the element too, since an inline !important would otherwise beat
+// anything written here.
+.o-mail-Form-chatter.o-aside,
+.o-mail-ChatterContainer.o-aside,
+.o_FormRenderer_chatterContainer.o-aside {
+    position: relative;
+    // Odoo already exposes this exact variable for widening the aside
+    // chatter (see mail's form_renderer.scss) - we just drive it from JS
+    // via drag instead of it always being 0px.
+    --Chatter-asideExtraWidth: 0px;
+}
+
+// ---- Let the form sheet actually use the width freed by narrowing
+// the chatter ----
+//
+// Odoo caps the sheet with $o-sheet-max-width and the sheet background
+// does not always flex-grow. So shrinking the chatter widens the
+// CONTAINER but leaves the white sheet at its old width, with a blank
+// gap between the two. These rules remove that cap - but only while
+// `o_chatter_manual_width` is on, which the JS sets exclusively when the
+// chatter is at a width the person chose themselves. At Odoo's default
+// width the class is absent and the form looks exactly like stock.
+.o_form_renderer.o_chatter_manual_width,
+.o_form_view.o_chatter_manual_width {
+    .o_form_sheet_bg {
+        flex: 1 1 auto !important;
+        // Without this a flex item refuses to shrink below its content's
+        // intrinsic width, which reintroduces the gap from the other side.
+        min-width: 0 !important;
+    }
+
+    .o_form_sheet {
+        max-width: none !important;
+        width: 100% !important;
+    }
+}
+
+// Belt-and-braces: if a handle ever survives into bottom mode (stale
+// bundle, interrupted teardown), keep it from rendering a stray grip
+// down the middle of the sheet.
+.o-mail-Form-chatter:not(.o-aside) .o_chatter_resize_handle,
+.o-mail-ChatterContainer:not(.o-aside) .o_chatter_resize_handle,
+.o_FormRenderer_chatterContainer:not(.o-aside) .o_chatter_resize_handle {
+    display: none;
+}
+
+.o_chatter_resize_handle {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    bottom: 0;
+    width: 20px;
+    cursor: ew-resize;
+    z-index: 999;
+    background: transparent;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 9px;
+        width: 3px;
+        border-radius: 2px;
+        // Faintly visible at rest so it can actually be found, not just
+        // when the mouse happens to land exactly on it.
+        background-color: rgba(113, 75, 103, 0.25);
+        transition: background-color .15s ease;
+    }
+
+    &:hover::after,
+    body.o_chatter_resizing &::after {
+        background-color: var(--o-resizer-handle-color, #714B67);
+    }
+}
+
+// Prevent text selection / cursor flicker while a horizontal drag is in
+// progress anywhere on the page.
+body.o_chatter_resizing {
+    cursor: ew-resize !important;
+    user-select: none !important;
+}

@@ -1,0 +1,61 @@
+// ---- Drag handle at the bottom edge of the form's content area ----
+.o_form_height_resize_handle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 16px;
+    cursor: ns-resize;
+    z-index: 999;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 4px;
+        width: 80px;
+        height: 5px;
+        border-radius: 3px;
+        // Faintly visible at rest so it can actually be found, not just
+        // when the mouse happens to land exactly on it.
+        background-color: rgba(113, 75, 103, 0.25);
+        transition: background-color .15s ease;
+    }
+
+    &:hover::after,
+    body.o_form_height_resizing &::after {
+        background-color: var(--o-resizer-handle-color, #714B67);
+    }
+}
+
+body.o_form_height_resizing {
+    cursor: ns-resize !important;
+    user-select: none !important;
+}
+
+// ---- "Expanded" mode: same overflow-swap Odoo's own mobile layout
+// already uses (see web/static/src/webclient/webclient_layout.scss,
+// @include media-breakpoint-down(md)) - just triggered manually instead
+// of by screen width, and by a continuous amount
+// (--o-form-extra-height) instead of an all-or-nothing switch. Lets the
+// surrounding action scroll the whole page instead of clipping content
+// inside .o_content's own small internal scrollbar.
+//
+// Every rule below is gated on the .o_form_manually_expanded class,
+// which the JS removes on unmount - so no other view ever inherits it.
+.o_content.o_form_manually_expanded {
+    --o-form-extra-height: 0px;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: calc(100% + var(--o-form-extra-height)) !important;
+}
+
+.o_action.o_form_manually_expanded {
+    overflow: auto !important;
+}
+
+.o_content.o_form_manually_expanded > .o_view_controller {
+    position: static !important;
+    height: auto !important;
+}
