@@ -118,9 +118,9 @@ Changelog
         ],
     },
 
-    # First entry is the listing thumbnail shown in App Store search
-    # results - it must be the banner, not the icon.
-    'images': ['static/description/banner.gif'],
+    'images': [
+        'static/description/odoo_apps_banner_hd.gif',
+    ],
 
     'installable': True,
     'application': False,
