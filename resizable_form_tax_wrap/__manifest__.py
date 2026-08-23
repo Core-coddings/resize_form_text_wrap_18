@@ -3,9 +3,9 @@
     'version': '18.0.2.1.0',
     'category': 'Extra Tools',
     'summary': 'Free. Drag to resize chatter, form height, list rows and embedded lists. Long column headers wrap instead of truncating.',
-    'author': 'Core Codings',
-    'maintainer': 'Core Codings',
-    'company': 'Core Codings',
+    'author': 'Core Coddings',
+    'maintainer': 'Core Coddings',
+    'company': 'Core Coddings',
     'website': '',
     'support': 'corecoddings@gmail.com',
 
