@@ -4,9 +4,9 @@
     'category': 'Extra Tools',
     'summary': 'Drag to resize chatter, form height, list rows and embedded lists. Long column headers wrap instead of truncating.',
 
-    'author': 'Core Codings',
-    'maintainer': 'Core Codings',
-    'company': 'Core Codings',
+    'author': 'Core Coddings',
+    'maintainer': 'Core Coddings',
+    'company': 'Core Coddings',
     'support': 'corecoddings@gmail.com',
 
     'license': 'LGPL-3',
