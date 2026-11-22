@@ -92,7 +92,7 @@ Changelog
     'images': [
         'static/description/odoo_apps_banner_hd.gif',
     ],
-    'price': 5.0,
+    'price': 0.0,
     'currency': 'USD',
     'installable': True,
     'application': False,
